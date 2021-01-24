@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="menusStyleSheet.css" rel="stylesheet" type="text/css">
+    
+	<script>
+    {
+
+		function retryGame()
+		{
+			window.location.href = "gamePanel.html";			
+		}
+		
+		function menu()
+		{
+			window.location.href = "index.html";			
+		}
+	
+		function quit()
+		{
+			navigator.app.exitApp();
+		}	
+    }
+    </script>
+        
+    <script src="phonegap.js"></script>
+</head>
+<body id="backgroundIMG">
+	<img src="assets/deadMenuTitle.png" id="bannerIMG"/>
+	<div id="deadMenuContainer">
+    	<img src="assets/retryButton.png" id="retryButton" onClick="retryGame()"/>
+        <img src="assets/menuButton.png" id="menuButton" onClick="menu()"/>
+    	<img src="assets/quitButton.png" id="quitButton" onClick="quit()"/> 
+	</div>        
+</body>
+</html>

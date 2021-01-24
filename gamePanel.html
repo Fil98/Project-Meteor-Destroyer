@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">	
+    <title></title>
+    <h1></h1>
+	<script>
+		
+		var score = 0;
+		var asteroidArray = [];
+		var enemyShipArray = [];
+		var playerHealth = 100;
+	
+       
+        function pause()
+        {
+            window.location.href = "pauseMenu.html";
+        }	
+		
+		
+		function listen()
+		{
+			pauseButton.addEventListener("touchstart", pause, false);
+			attackButton.addEventListener("touchstart", shipAttack, false);
+			leftButtonIMG.addEventListener("touchstart", shipLeft, false);
+			leftButtonIMG.addEventListener("touchstart", shipStatus, false);
+			rightButtonIMG.addEventListener("touchstart", shipRight, false);
+		}
+		
+		
+		function defaultUI()
+		{
+			document.getElementById("scoreBoard").innerHTML += "Score: 0";
+			document.getElementById("healthDisplay").innerHTML += "Health: 100%"; 
+		}
+    </script>
+</head>
+<script src="phonegap.js"></script>
+<script language="Javascript" src="scripts/shipControl.js"> </script>
+<script language="Javascript" src="scripts/enemiesAndAsteroids.js"> </script>
+<meta name="viewport" content="width=device-width, inital-scale=1, maximum-scale=1, user-scalable=no" />
+<link href="gameStyleSheet.css" rel="stylesheet" type="text/css">
+<body id="backgroundIMG" onLoad="initalize(), listen(), defaultUI()" >
+    <input type="image" src="assets/pauseButton.png" id="pauseButton"/> 
+	<div id="infoBoard">
+		<div id="scoreBoard"></div>
+		<div id="healthDisplay"></div>
+	</div>
+    <div id="qa"></div>
+	<div id="npcSpawner"></div>
+    <div id="laserSpawner"></div>
+	<img src="assets/playerShip.png" id="playerShip"/>
+	<div id="footerContainer">
+		<input type="image" src="assets/attackButton.png" id="attackButton"/>
+		<div id="moveButtonContainer">
+			  <input type="image" src="assets/leftButton.png" id="leftButtonIMG"/> 
+			  <input type="image" src="assets/rightButton.png" id="rightButtonIMG"/>
+		</div>
+	</div>
+</body>
+</html>
